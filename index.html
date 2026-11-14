@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101014">
+  <meta name="description" content="Huecraft is a free accessible color palette studio. Create, preview, and export thoughtful color systems.">
+  <meta property="og:title" content="Huecraft — Accessible Color Studio">
+  <meta property="og:description" content="Create a palette. Check contrast. Ship with confidence.">
+  <title>Huecraft — Accessible Color Studio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Huecraft home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>huecraft<span class="brand-period">.</span></span></a>
+      <nav class="top-nav" aria-label="Main navigation"><a href="#studio">Studio</a><a href="#accessibility">Accessibility</a><a href="#saved">Saved palettes</a></nav>
+      <a class="top-link" href="https://github.com/Bharathpurvath" target="_blank" rel="noreferrer">Made by Bharath B <span aria-hidden="true">↗</span></a>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE STUDIO FOR BETTER COLOR</p>
+          <h1>Color that works.<br><span>Feels like you.</span></h1>
+          <p class="hero-description">Build a palette, see it in a real interface, and make sure everyone can read it.</p>
+          <a class="hero-jump" href="#studio">Open the palette studio <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="hero-orb orb-violet"></div><div class="hero-orb orb-lime"></div><div class="hero-orb orb-coral"></div>
+          <div class="hero-art-note"><span class="note-dot"></span> COLOR SYSTEM / 01</div>
+          <span class="hero-art-label label-top">#9B8CFF</span><span class="hero-art-label label-bottom">GOOD COLOR IS FOR EVERYONE</span>
+        </div>
+      </section>
+      <section class="studio-section" id="studio">
+        <div class="section-heading"><div><p class="section-kicker">01 / THE WORKSPACE</p><h2>Make it yours.</h2></div><p class="section-aside">Lock the colors you love.<br>Refresh the rest.</p></div>
+        <div class="studio-card">
+          <div class="studio-toolbar">
+            <div class="toolbar-title"><span class="live-indicator"></span><div><strong>Your palette</strong><small id="paletteModeLabel">COMPLEMENTARY HARMONY</small></div></div>
+            <label class="select-wrap"><span class="sr-only">Color harmony</span><select id="harmonySelect"><option value="complementary">Complementary</option><option value="analogous">Analogous</option><option value="triadic">Triadic</option><option value="monochrome">Monochrome</option></select><span class="select-chevron" aria-hidden="true">⌄</span></label>
+          </div>
+          <div class="swatch-grid" id="swatchGrid" aria-label="Generated palette colors"></div>
+          <div class="studio-actions">
+            <button class="button button-primary" id="generateButton" type="button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15.8 5.4V2.8m0 0h-2.6m2.6 0-3.2 3.1a6 6 0 1 0 1.5 6.7M4.2 14.6v2.6m0 0h2.6m-2.6 0 3.2-3.1a6 6 0 0 0-1.5-6.7"/></svg>Generate palette</button>
+            <button class="button button-secondary" id="saveButton" type="button"><span aria-hidden="true">＋</span> Save palette</button>
+            <div class="action-spacer"></div>
+            <button class="button button-quiet" id="copyCssButton" type="button"><span aria-hidden="true">▣</span> Copy CSS</button>
+            <button class="button button-quiet" id="exportButton" type="button"><span aria-hidden="true">↓</span> Export .json</button>
+          </div>
+          <p class="keyboard-hint"><kbd>Space</kbd> generate <span>·</span> Click a color to copy its hex <span>·</span> Lock a swatch to keep it</p>
+        </div>
+      </section>
+      <section class="preview-section">
+        <div class="section-heading compact-heading"><div><p class="section-kicker">02 / A QUICK PREVIEW</p><h2>See it in context.</h2></div><p class="section-aside">A tiny interface, styled<br>with your palette.</p></div>
+        <div class="preview-layout">
+          <div class="preview-card" id="previewCard">
+            <div class="preview-appbar"><span class="preview-app-logo">N</span><span class="preview-app-name">northstar</span><span class="preview-menu">•••</span></div>
+            <div class="preview-content"><p class="preview-overline">YOUR NEXT CHAPTER</p><h3>Make room<br>for good ideas.</h3><p class="preview-copy">A thoughtful workspace for the things you want to bring to life.</p><button class="preview-cta" type="button">Explore the space <span aria-hidden="true">↗</span></button><div class="preview-foot"><span><i></i> YOUR SPACE, YOUR PACE</span><span>01 — 04</span></div></div>
+          </div>
+          <div class="preview-notes">
+            <div class="note-line"><span class="note-number">01</span><div><strong>Real UI preview</strong><p>Colors are mapped to a small product card so you can judge them together.</p></div></div>
+            <div class="note-line"><span class="note-number">02</span><div><strong>Good contrast counts</strong><p>Check foreground and background pairs before you ship your design.</p></div></div>
+            <div class="preview-stamp"><span>DESIGNED TO<br>BE READ BY ALL</span><span aria-hidden="true">✳</span></div>
+          </div>
+        </div>
+      </section>
+      <section class="accessibility-section" id="accessibility">
+        <div class="section-heading compact-heading"><div><p class="section-kicker">03 / ACCESSIBILITY CHECK</p><h2>Readable is beautiful.</h2></div><p class="section-aside">WCAG contrast ratios<br>at a glance.</p></div>
+        <div class="contrast-card">
+          <div class="contrast-intro"><span class="contrast-icon" aria-hidden="true">◐</span><h3>Contrast checker</h3><p>Choose any two colors in your palette to check the contrast ratio.</p>
+            <div class="contrast-fields">
+              <label>TEXT COLOR<span class="color-input-wrap"><input id="textColorInput" type="text" inputmode="text" maxlength="7" value="#18171D" aria-label="Text color hex code"><span id="textColorChip" class="color-input-chip"></span></span></label>
+              <span class="versus">on</span>
+              <label>BACKGROUND<span class="color-input-wrap"><input id="backgroundColorInput" type="text" inputmode="text" maxlength="7" value="#FFFFFF" aria-label="Background color hex code"><span id="backgroundColorChip" class="color-input-chip"></span></span></label>
+            </div>
+          </div>
+          <div class="contrast-result" aria-live="polite"><div class="ratio-wrap"><span class="ratio-label">CONTRAST RATIO</span><strong id="contrastRatio">—</strong><span class="ratio-description">Normal text target: 4.5:1</span></div><div class="wcag-badges"><div class="wcag-row"><span>AA · Normal</span><strong id="aaNormal">—</strong></div><div class="wcag-row"><span>AA · Large</span><strong id="aaLarge">—</strong></div><div class="wcag-row"><span>AAA · Normal</span><strong id="aaaNormal">—</strong></div></div></div>
+        </div>
+        <p class="wcag-footnote">Based on WCAG 2.1 contrast guidance. This quick check is a helpful starting point, not a full accessibility audit.</p>
+      </section>
+      <section class="saved-section" id="saved">
+        <div class="section-heading compact-heading"><div><p class="section-kicker">04 / YOUR LIBRARY</p><h2>Keep the good ones.</h2></div><p class="section-aside"><span id="savedCount">0 palettes saved</span><br>Stored on this device.</p></div>
+        <div class="saved-grid" id="savedGrid"></div>
+        <div class="empty-state" id="emptyState"><span aria-hidden="true">✳</span><p>Your saved palettes will live here.</p><small>When you find a combination you like, save it above.</small></div>
+      </section>
+      <section class="closing-note"><span class="closing-star" aria-hidden="true">✳</span><p class="section-kicker">GOOD DESIGN MAKES ROOM FOR EVERYONE</p><p class="closing-copy">A small tool for turning <span>“that looks nice”</span> into a system you can use.</p></section>
+    </main>
+    <footer class="footer"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>huecraft<span class="brand-period">.</span></span></a><p>Built with care by Bharath B · 2026</p><a href="https://github.com/Bharathpurvath" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
+
